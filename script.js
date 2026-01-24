@@ -8,6 +8,9 @@ let c6 = document.getElementById("6");
 let c7 = document.getElementById("7");
 let c8 = document.getElementById("8");
 let c9 = document.getElementById("9");
+let X = 0;
+let O = 0;
+let cells = [c1,c2,c3,c4,c5,c6,c7,c8,c9];
 let playerDisplay = document.getElementById("playerDisplay");
 let currentPlayer = "X";
 playerDisplay.innerHTML="Player "+currentPlayer+"'s turn";
@@ -19,19 +22,51 @@ function input(c,x,y) {
         data[x][y]=currentPlayer;
         if (currentPlayer==="X") {
             c.setAttribute('src','files/C.png');
+            setTimeout(()=>{console.log("Meow")}, 1000);
             checkWinner(currentPlayer);
             currentPlayer="O";
         } else {
             c.setAttribute('src','files/O.png');
+            setTimeout(()=>{console.log("Meow")}, 1000);
             checkWinner(currentPlayer);
             currentPlayer="X";
         }
+        displayUpdate();
     }
 }
 function checkWinner(Player) {
-    if(data[0][0]==Player && data[1][1]==Player && data[2][2]==Player){
+    if(data[0][0]==Player && data[1][1]==Player && data[2][2]==Player || data[2][0]==Player && data[1][1]==Player && data[0][2]==Player){
         alert(currentPlayer+" Won!");
+        if(currentPlayer=='X'){
+            X++;
+            document.getElementById(currentPlayer).value=X;
+        }
+        else{
+            O++;
+            document.getElementById(currentPlayer).value=O;
+        }
+        reset();
     }
+    for(let i=0;i<3;i++){
+        if(data[i][0]==Player && data[i][1]==Player && data[i][2]==Player || data[0][i]==Player && data[1][i]==Player && data[2][i]==Player){
+            alert(currentPlayer+" Won!");
+            if(currentPlayer=='X'){
+                X++;
+                document.getElementById(currentPlayer).value=X;
+            }
+            else{
+                O++;
+                document.getElementById(currentPlayer).value=O;
+            }
+            reset();
+        }
+    }
+}
+function reset() {
+    cells.forEach(element => {
+        element.src="files/Blank.png";
+    });
+    data = [['','',''],['','',''],['','','']];
 }
 c1.addEventListener('mousedown', ()=>input(c1,0,0));
 c2.addEventListener('mousedown', ()=>input(c2,0,1));

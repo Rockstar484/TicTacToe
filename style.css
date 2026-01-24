@@ -1,8 +1,25 @@
 body{
     background-color: azure;
 }
+#playerDisplay{
+    text-align: center;
+    background-color: lightblue;
+    margin-left: 10cm;
+    margin-right: 10cm;
+}
+.scoreImage{
+    width: 1cm;
+    height: 1cm;
+}
+.score{
+    width: 1cm;
+    height: 1cm;
+    font-size: xx-large;
+    color: black;
+    border: none;
+    background-color: transparent;
+}
 #table{
-    margin-top: 5vh;
     margin-left: auto;
     margin-right: auto;
     border-spacing: 0px;
