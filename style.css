@@ -3,9 +3,10 @@ body{
 }
 #playerDisplay{
     text-align: center;
+    width: 6cm;
     background-color: lightblue;
-    margin-left: 10cm;
-    margin-right: 10cm;
+    margin-left: auto;
+    margin-right: auto;
 }
 .scoreImage{
     width: 1cm;
