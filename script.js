@@ -46,9 +46,6 @@ function checkWinner(Player) {
             document.getElementById(currentPlayer).value=O;
         }
         reset();
-        if(count>=9){
-            alert("draw");
-        }
     }
     for(let i=0;i<3;i++){
         if(data[i][0]==Player && data[i][1]==Player && data[i][2]==Player || data[0][i]==Player && data[1][i]==Player && data[2][i]==Player){
@@ -63,6 +60,10 @@ function checkWinner(Player) {
             }
             reset();
         }
+    }
+    if(count>=9){
+        alert("Draw");
+        reset();
     }
 }
 function reset() {
