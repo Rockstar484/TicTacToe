@@ -8,6 +8,19 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+#multiplayerButtonAlign{
+    text-align: right;
+}
+#multiplayerButton{
+    border-radius: 25px;
+    border-color: blue;
+    background-color: lightcoral;
+    transition: transform 0.5s ease;
+}
+#multiplayerButton:hover{
+    transform: scale(1.15);
+    transform-origin: 100% 100%;
+}
 .scoreImage{
     width: 1cm;
     height: 1cm;
@@ -25,6 +38,6 @@ body{
     margin-right: auto;
     border-spacing: 0px;
 }
-.cell{
+.cells{
     border: 3px solid black;
 }

@@ -11,22 +11,22 @@
         <h1 id="playerDisplay"></h1>
         <table id="table">
             <tr>
-                <td class="cell"><img src="files/Blank.png" id="1"></td>
-                <td class="cell"><img src="files/Blank.png" id="2"></td>
-                <td class="cell"><img src="files/Blank.png" id="3"></td>
+                <td class="cells"><img src="files/Blank.png" class="cell" data-x="0" data-y="0" id="1"></td>
+                <td class="cells"><img src="files/Blank.png" class="cell" data-x="0" data-y="1" id="2"></td>
+                <td class="cells"><img src="files/Blank.png" class="cell" data-x="0" data-y="2" id="3"></td>
             </tr>
             <tr>
-                <td class="cell"><img src="files/Blank.png" id="4"></td>
-                <td class="cell"><img src="files/Blank.png" id="5"></td>
-                <td class="cell"><img src="files/Blank.png" id="6"></td>
+                <td class="cells"><img src="files/Blank.png" class="cell" data-x="1" data-y="0" id="4"></td>
+                <td class="cells"><img src="files/Blank.png" class="cell" data-x="1" data-y="1" id="5"></td>
+                <td class="cells"><img src="files/Blank.png" class="cell" data-x="1" data-y="2" id="6"></td>
             </tr>
             <tr>
-                <td class="cell"><img src="files/Blank.png" id="7"></td>
-                <td class="cell"><img src="files/Blank.png" id="8"></td>
-                <td class="cell"><img src="files/Blank.png" id="9"></td>
+                <td class="cells"><img src="files/Blank.png" class="cell" data-x="2" data-y="0" id="7"></td>
+                <td class="cells"><img src="files/Blank.png" class="cell" data-x="2" data-y="1" id="8"></td>
+                <td class="cells"><img src="files/Blank.png" class="cell" data-x="2" data-y="2" id="9"></td>
             </tr>
         </table>
-        <h1>Scoreboard</h1>
+        <span style="font-weight:bold; font-size:xx-large;">Scoreboard</span>
         <table id="scoreboard">
             <tr>
                 <td><img src="files/C.png" class="scoreImage"></td>
@@ -37,6 +37,17 @@
                 <td><input type="text" id="O" class="score" value="0" disabled></td>
             </tr>
         </table>
+            <div id="multiplayerButtonAlign"><button id="multiplayerButton" onclick="multiplayerIDdialog()">Play Multiplayer</button></div>
+
+        <dialog id="mpDialog">
+            <span>Your ID: </span><span id="myPeerID">No id found, try reloading page</span><button id="copyButton">Copy</button>
+            <br><br>
+            <span>Enter your friend's ID: </span><input type="text" id="friendID" placeholder="Ask your friend for his ID">
+            <button id="connectButton" onclick="connectPeer()">Connect</button>
+            <br><br>
+            <button id="closeButton" onclick="mpDialog.close()">Close</button>
+        </dialog>
+        <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
         <script src=script.js></script>
     </body>
 </html>
