@@ -40,7 +40,7 @@
             <div id="multiplayerButtonAlign"><button id="multiplayerButton" onclick="multiplayerIDdialog()">Play Multiplayer</button></div>
 
         <dialog id="mpDialog">
-            <span>Your ID: </span><span id="myPeerID">No id found, try reloading page</span><button id="copyButton">Copy</button>
+            <span>Your ID: </span><span id="myPeerID">No id found, try reloading page</span><button id="copyButton" onclick="copy(document.getElementById('myPeerID').innerHTML)">Copy</button>
             <br><br>
             <span>Enter your friend's ID: </span><input type="text" id="friendID" placeholder="Ask your friend for his ID">
             <button id="connectButton" onclick="connectPeer()">Connect</button>

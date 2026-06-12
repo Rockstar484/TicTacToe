@@ -127,6 +127,8 @@ function connectPeer(){
         alert("Multiplayer connection Ended.\nYou can still play with someone sitting with you.\nOr try reconnecting");
         reset();
         scoreReset();
+        turn = "my";
+        conn=null;
     });
 }
 
@@ -150,9 +152,22 @@ peer.on("connection", function(connection){
         alert("Multiplayer connection Ended.\nYou can still play with someone sitting with you.\nOr try reconnecting");
         reset();
         scoreReset();
+        turn = "my";
+        conn=null;
     });
 });
 
 window.addEventListener('beforeunload', () => {
     conn.close();
 });
+
+async function copy(text){
+    try{
+        await navigator.clipboard.writeText(text);
+        alert("ID Copied!");
+        document.getElementById("mpDialog").close();
+    }
+    catch(error){
+        alert("Failed to copy text: "+error.message);
+    }
+}
